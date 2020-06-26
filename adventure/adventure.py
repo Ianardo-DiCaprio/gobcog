@@ -4477,12 +4477,12 @@ class Adventure(BaseCog):
                 ),
             )
 
-        if not await has_funds(ctx.author, 250):
+        if not await has_funds(ctx.author, 0):
             currency_name = await bank.get_currency_name(ctx.guild)
             return await smart_embed(
                 ctx,
                 _("You need {req} {name} to start an adventure.").format(
-                    req=250, name=currency_name
+                    req=0, name=currency_name
                 ),
             )
         guild_settings = await self.config.guild(ctx.guild).all()
