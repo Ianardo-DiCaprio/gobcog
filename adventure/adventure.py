@@ -778,9 +778,10 @@ class Adventure(BaseCog):
                         ),
                     )
 
-            backpack_contents = _("[{author}'s backpack] \n\n{backpack}\n").format(
+            backpack_contents = _("[{author}'s backpack] \n\n{backpack}\n\n Character Level: {c}").format(
                 author=self.escape(ctx.author.display_name),
                 backpack=await c.get_backpack(rarity=rarity, slot=slot),
+                c = c.lvl,
             )
             msgs = []
             async for page in AsyncIter(
