@@ -4938,7 +4938,7 @@ class Adventure(BaseCog):
     async def _handle_adventure(self, reaction, user):
         action = {v: k for k, v in self._adventure_controls.items()}[str(reaction.emoji)]
         session = self._sessions[user.guild.id]
-        has_fund = await has_funds(user, 250)
+        has_fund = await has_funds(user, 0)
         for x in ["fight", "magic", "talk", "pray", "run"]:
             if user in getattr(session, x, []):
                 getattr(session, x).remove(user)
