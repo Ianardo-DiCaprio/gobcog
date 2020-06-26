@@ -4717,14 +4717,14 @@ class Adventure(BaseCog):
         if attribute == " possessed":
             self.bot.dispatch("adventure_possessed", ctx)
         if monster_roster[challenge]["boss"]:
-            timer = 60 * 5
+            timer = 15 * 4
             text = box(_("\n [{} Alarm!]").format(challenge), lang="css")
             self.bot.dispatch("adventure_boss", ctx)  # dispatches an event on bosses
         elif monster_roster[challenge]["miniboss"]:
-            timer = 60 * 3
+            timer = 15 * 3
             self.bot.dispatch("adventure_miniboss", ctx)
         else:
-            timer = 60 * 2
+            timer = 15 * 2
         if transcended:
             new_challenge = challenge.replace("Ascended", "Transcended")
             if "Transcended" in new_challenge:
@@ -4837,7 +4837,7 @@ class Adventure(BaseCog):
                 adventure_msg = await ctx.send(embed=embed)
             else:
                 adventure_msg = await ctx.send(f"{adventure_msg}\n{dragon_text}")
-            timeout = 60 * 5
+            timeout = 15 * 4
 
         elif session.miniboss:
             if use_embeds:
@@ -4848,7 +4848,7 @@ class Adventure(BaseCog):
                 adventure_msg = await ctx.send(embed=embed)
             else:
                 adventure_msg = await ctx.send(f"{adventure_msg}\n{basilisk_text}")
-            timeout = 60 * 3
+            timeout = 15 * 3
         else:
             if use_embeds:
                 embed.description = f"{adventure_msg}\n{normal_text}"
@@ -4857,7 +4857,7 @@ class Adventure(BaseCog):
                 adventure_msg = await ctx.send(embed=embed)
             else:
                 adventure_msg = await ctx.send(f"{adventure_msg}\n{normal_text}")
-            timeout = 60 * 2
+            timeout = 15 * 2
         session.message_id = adventure_msg.id
         session.message = adventure_msg
         start_adding_reactions(adventure_msg, self._adventure_actions)
