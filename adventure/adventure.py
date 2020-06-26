@@ -335,7 +335,7 @@ class Adventure(BaseCog):
             "cooldown": 0,
             "cartroom": None,
             "cart_timeout": 10800,
-            "cooldown_timer_manual": 120,
+            "cooldown_timer_manual": 30,
             "rebirth_cost": 100.0,
         }
         default_global = {
@@ -4717,11 +4717,11 @@ class Adventure(BaseCog):
         if attribute == " possessed":
             self.bot.dispatch("adventure_possessed", ctx)
         if monster_roster[challenge]["boss"]:
-            timer = 15 * 4
+            timer = 15 * 2
             text = box(_("\n [{} Alarm!]").format(challenge), lang="css")
             self.bot.dispatch("adventure_boss", ctx)  # dispatches an event on bosses
         elif monster_roster[challenge]["miniboss"]:
-            timer = 15 * 3
+            timer = 15 * 2
             self.bot.dispatch("adventure_miniboss", ctx)
         else:
             timer = 15 * 2
@@ -4837,7 +4837,7 @@ class Adventure(BaseCog):
                 adventure_msg = await ctx.send(embed=embed)
             else:
                 adventure_msg = await ctx.send(f"{adventure_msg}\n{dragon_text}")
-            timeout = 15 * 4
+            timeout = 15 * 2
 
         elif session.miniboss:
             if use_embeds:
@@ -4848,7 +4848,7 @@ class Adventure(BaseCog):
                 adventure_msg = await ctx.send(embed=embed)
             else:
                 adventure_msg = await ctx.send(f"{adventure_msg}\n{basilisk_text}")
-            timeout = 15 * 3
+            timeout = 15 * 2
         else:
             if use_embeds:
                 embed.description = f"{adventure_msg}\n{normal_text}"
