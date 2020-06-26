@@ -4764,7 +4764,7 @@ class Adventure(BaseCog):
             "but **a{attr} {chall}** "
             "just landed in front of you glaring! \n\n"
             "What will you do and will other heroes be brave enough to help you?\n"
-            "Heroes have 5 minutes to participate via reaction:"
+            "Heroes have 30 seconds to participate via reaction:"
             "\n\nReact with: {reactions}"
         ).format(
             attr=session.attribute,
@@ -4784,7 +4784,7 @@ class Adventure(BaseCog):
         basilisk_text = _(
             "but **a{attr} {chall}** stepped out looking around. \n\n"
             "What will you do and will other heroes help your cause?\n"
-            "Heroes have 3 minutes to participate via reaction:"
+            "Heroes have 30 seconds to participate via reaction:"
             "\n\nReact with: {reactions}"
         ).format(
             attr=session.attribute,
@@ -4805,7 +4805,7 @@ class Adventure(BaseCog):
             "but **a{attr} {chall}** "
             "is guarding it with{threat}. \n\n"
             "What will you do and will other heroes help your cause?\n"
-            "Heroes have 2 minutes to participate via reaction:"
+            "Heroes have 30 seconds to participate via reaction:"
             "\n\nReact with: {reactions}"
         ).format(
             attr=session.attribute,
