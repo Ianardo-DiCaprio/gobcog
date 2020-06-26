@@ -193,7 +193,7 @@ class Item:
             rarity_multiplier = min(
                 RARITIES.index(self.rarity) if self.rarity in RARITIES else 1, 5
             )
-            lvl = self.max_main_stat * (rarity_multiplier + 3)
+            lvl = 1
         return max(round(lvl), 1)
 
     @staticmethod
